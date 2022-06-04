@@ -1,3 +1,4 @@
+console.log('Floating block has started');
 const canvas = document.getElementById("gameArea");
 const ctx = canvas.getContext("2d");
 
@@ -22,42 +23,34 @@ function drawGame() {
 
 function boundryCheck() {
     //ceiling
-    if (y < radius) {
+    if (y < radius)
         y = radius;
-    }
 
     //floor
-    if (y > canvas.height - radius) {
+    if (y > canvas.height - radius)
         y = canvas.height - radius;
-    }
 
     //left wall
-    if (x < radius) {
+    if (x < radius)
         x = radius;
-    }
 
     //right wall
-    if (x > canvas.width - radius) {
+    if (x > canvas.width - radius)
         x = canvas.width - radius;
-    }
 }
 
 function inputs() {
-    if (upPressed) {
+    if (upPressed)
         y -= speed;
-    }
 
-    if (downPressed) {
+    if (downPressed)
         y += speed;
-    }
 
-    if (leftPressed) {
+    if (leftPressed)
         x -= speed;
-    }
 
-    if (rightPressed) {
+    if (rightPressed)
         x += speed;
-    }
 }
 
 function drawBlob() {
@@ -78,46 +71,38 @@ document.body.addEventListener("keyup", keyUp);
 
 function keyDown(event) {
     //up
-    if(event.keyCode == 38) {
+    if(event.keyCode == 38)
         upPressed = true;
-    }
 
     //down
-    if(event.keyCode == 40) {
+    if(event.keyCode == 40)
         downPressed = true;
-    }
 
     //left
-    if(event.keyCode == 37) {
+    if(event.keyCode == 37)
         leftPressed = true;
-    }
 
     //right
-    if(event.keyCode == 39) {
+    if(event.keyCode == 39)
         rightPressed = true;
-    }
 }
 
 function keyUp(event) {
     //up
-    if(event.keyCode == 38) {
+    if(event.keyCode == 38)
         upPressed = false;
-    }
 
     //down
-    if(event.keyCode == 40) {
+    if(event.keyCode == 40)
         downPressed = false;
-    }
 
     //left
-    if(event.keyCode == 37) {
+    if(event.keyCode == 37)
         leftPressed = false;
-    }
 
     //right
-    if(event.keyCode == 39) {
+    if(event.keyCode == 39)
         rightPressed = false;
-    }
 }
 
 drawGame();
